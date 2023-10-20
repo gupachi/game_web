@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import { ChangeEvent, FormEvent } from 'react';
+import { ChangeEvent } from 'react';
 
 export const Main = () => {
   const [url, setUrl] = useState("");
@@ -9,12 +9,13 @@ export const Main = () => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUrl(e.target.value);
   };
-
+  
   const handleSubmit = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     // URL로 리다이렉트
     navigate(`${url}`);
   };
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
 
   return (
     <div
@@ -25,8 +26,9 @@ export const Main = () => {
         margin: "60px 0px",
       }}
       >
-      #Form 생성하기   
-      <div onSubmit={handleSubmit}>
+    
+      <div onSubmit={handleSubmit} css={{ fontSize: 40 }}>
+    
           <input
             type="text"
             placeholder="URL을 입력하세요"
@@ -35,12 +37,12 @@ export const Main = () => {
           />
           <button type="submit">이동</button>
         </div>
-      <h1>게임 이름 </h1>
-      <div css={{ fontSize: 18 }}>
-        <p>게임설명</p>
-        <p>
-          web2 & web3 
-        </p>
+      <div css={{ fontSize: 100 }}>게임 이름 </div>
+      <div css={{ fontSize: 100 }}>
+        게임설명 
+         web2 & web
+       
+      
       </div>
       <div
         onClick={() => navigate("/game")}
