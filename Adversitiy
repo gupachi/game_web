@@ -1,0 +1,32 @@
+/* eslint-disable jsx-a11y/alt-text */
+import { useEffect } from 'react';
+
+const CloseWindowAfterDelay = () => {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          window.close();
+        }, 20000);
+    
+        // 컴포넌트가 언마운트될 때 타이머를 정리합니다.
+        return () => clearTimeout(timer);
+    }, []);
+};
+
+export const Adversity =() => {
+    CloseWindowAfterDelay(); // 시간이니까 상관없음
+    return(
+        <>
+            <img
+                style={{ marginBottom: 20 }}
+                width={300}
+                src="https://www.notion.so/gamefi-d25977f2af4048fc826f45aea111c4da"
+            />
+             <img
+                style={{ marginBottom: 20 }}
+                width={300}
+                src="https://www.notion.so/gamefi-d25977f2af4048fc826f45aea111c4da"
+            />
+        </>
+    );
+
+}
